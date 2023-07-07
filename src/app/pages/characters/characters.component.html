@@ -1,0 +1,28 @@
+<app-header (valueEmitter)="getValueFromInput($event)"></app-header>
+
+<span class="alert-text">{{alertText}}</span>
+<div class="paginator" >
+    <button class="btn btn-danger" title="Anterior" (click)="prevPage()">&#xf04a;</button>
+    <span>Página {{page}}</span>
+    <button class="btn btn-danger" title="Siguiente" (click)="nextPage()">&#xf04e;</button>
+    <button class="btn btn-link reset" (click)="resetList()" *ngIf="page > 1">Volver al inicio</button>
+</div>
+<div class="characters-container">
+    <div class="character-card" *ngFor="let character of characters$">
+        <p class="character-name">{{character.name}}</p>
+        <div class="img-container">
+            <img [src]="character.image" alt="">
+        </div>
+        <div class="character-info">
+            <p title="Especie">&#xe542;: {{character.species}}</p>
+            <p title="Género">&#xf228;: {{character.gender}}</p>
+            <p title="Estado">&#xf21e;: {{character.status}}</p>
+        </div>
+        
+        <div class="links">
+            <span title="Origen">&#xf57d;: {{character.origin.name}}</span>
+            <span title="Ubicación actual">&#Xf3c5;: {{character.location.name}}</span>
+        </div>
+    </div>
+   
+</div>

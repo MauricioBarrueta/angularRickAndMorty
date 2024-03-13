@@ -1,7 +1,11 @@
-# AngularRnM
+🇲🇽 Esta página web que consume la API de la serie 'Rick and Morty' permite consultar todos y cada uno de los personajes de la        serie, así como también, los datos correspondientes de cada uno de ellos.
+
+🇺🇸 This website which consumes the API of the series 'Rick and Morty' allows you to consult each and every one of the characters of the series, as well as the corresponding data of each one of them.
+
+![AngularRM](https://github.com/MauricioBarrueta/angularRickAndMorty/assets/60496232/20988379-2fae-492e-80f2-b33209f378da)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
-
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

@@ -2,7 +2,7 @@
 
 🇺🇸 This website which consumes the API of the series 'Rick and Morty' allows you to consult each and every one of the characters of the series, as well as the corresponding data of each one of them.
 
-![AngularRM](https://github.com/MauricioBarrueta/angularRickAndMorty/assets/60496232/20988379-2fae-492e-80f2-b33209f378da)
+![AngularRM](https://github.com/user-attachments/assets/de10a566-2647-498a-8ac3-244ba143f987)
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.

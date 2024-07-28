@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CharacterService } from './service/character.service';
 import { catchError, tap, throwError } from 'rxjs';
 import { Character } from './interface/character';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-characters',
@@ -10,13 +11,15 @@ import { Character } from './interface/character';
 })
 export class CharactersComponent implements OnInit {
 
-  constructor(private readonly characterService: CharacterService) { }
+  constructor(private readonly characterService: CharacterService, private router: Router) { }
 
   inputValue!: string
   characters$!: Character[]
   page: number = 1   
 
   alertText!: string
+  firstPage!: boolean
+  lastPage!: boolean
   
   ngOnInit(): void {
    this.getCharactersByPage()    
@@ -25,12 +28,15 @@ export class CharactersComponent implements OnInit {
   /* Lista de personajes por página */
   getCharactersByPage(): void {
     this.alertText = ''
+    this.firstPage = this.page > 1 ? false : true
+    this.router.navigate([`characters-list`], { queryParams: { page: `${this.page}` } })
+
     this.characterService.getCharactersList(this.page)
       .pipe(
         catchError(error => {
           if (error.status === 404) {
             this.page--
-            this.alertText = 'Parece que has llegado a la última página'
+            this.lastPage = true
           }
           return throwError(() => error)
         }),
@@ -43,7 +49,8 @@ export class CharactersComponent implements OnInit {
   getValueFromInput(input: string): void {
     this.inputValue = input
     this.getCharacterByName()
-    if(this.inputValue.length == 1) {
+    if(this.inputValue.length <= 1) {
+      this.page = 1
       this.getCharactersByPage()
     }
   }
@@ -51,17 +58,22 @@ export class CharactersComponent implements OnInit {
   /* Filtrar personajes por nombre */
   getCharacterByName() {
     this.alertText = ''
+    this.router.navigate([`characters-list`], { queryParams: { name: `${this.inputValue.replace(/ /,"+")}` } })
+
     this.characterService.getCharacterByName(this.page, this.inputValue)
     .pipe(
       catchError(error => {
         if (error.status === 404) {
           this.page = 1
-          this.getCharactersByPage()
-          this.alertText = 'Ningún resultado coincide con este nombre'
+          // this.getCharactersByPage()
+          this.characters$ = []
+          this.alertText = 'Lo sentimos, ningún personaje coincide con este nombre. Verifícalo e intenta de nuevo'
         }
         return throwError(() => error)
       }),
-      tap((res: Character[]) => { this.characters$ = res })
+      tap((res: Character[]) => { 
+        this.characters$ = res        
+      })
     )
     .subscribe();
   }

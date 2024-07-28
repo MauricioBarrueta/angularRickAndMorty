@@ -1,16 +1,17 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, filter, map, tap } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-header',
   template: `
     <header>
-      <h2>Rick and Morty Wiki</h2>
+      <a href="https://rickandmortyapi.com/documentation" target="_blank">Rick and Morty Wiki</a>
       <div class="container">
         <form>
-            <input class="form-control" type="text" name="input" [formControl]="value" placeholder="Nombre del personaje: &#xf304;" 
-              autocomplete="off">
+            <input class="form-control" type="text" name="input" [formControl]="value" autocomplete="off"
+              placeholder="Ingresa el nombre del personaje que buscas, los resultados se mostrarán automáticamente:">
         </form>        
       </div>
     </header>
@@ -24,6 +25,8 @@ export class HeaderComponent implements OnInit {
   
   value = new FormControl('')
   @Output() valueEmitter = new EventEmitter<string>()
+
+  imgPath: string = `${environment.imgPath}`
   
   ngOnInit(): void {
     this.getInputValue()
@@ -36,7 +39,7 @@ export class HeaderComponent implements OnInit {
         map((value) => value?.toString().trim()),
         debounceTime(400),
         distinctUntilChanged(),
-        filter((value) => value !== ''),        
+        // filter((value) => value !== ''),        
         tap((value) => this.valueEmitter.emit(value))
       )
       .subscribe();    

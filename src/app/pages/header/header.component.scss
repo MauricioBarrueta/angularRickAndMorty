@@ -1,23 +1,28 @@
 header {
-    background-color: #316759; border-bottom: 2px solid;
+    background-color: var(--endo); 
+    border-bottom: 3px solid var(--callaGreen); box-shadow:  0px 5px 5px 0px rgba(107, 113, 50, .65);
     text-align: center; padding: 1em;
-    background-image: url(../../../assets/img/bgLeft.jpg), url(../../../assets/img/bgRight.jpg);
-    background-position: center left, center right; background-repeat: no-repeat; background-size: auto;
-    h2 {
-        font-size: 22px; letter-spacing: 5px; text-transform: uppercase; font-weight: bold;
-        color: #13363e; margin-bottom: 5px; cursor: default;   
-        text-shadow: -1px -1px 0 #40B6CB, 1px -1px 0 #40B6CB, -1px 1px 0 #40B6CB, 1px 1px 0 #40B6CB;
+
+    background-image: url(../../../assets/img/rick.png), url(../../../assets/img/morty.png);
+    background-position: center left, center right; background-repeat: no-repeat; background-size: 13%; 
+    
+    a {
+        font-size: 24px; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; text-decoration: none;
+        color: var(--kiwiGreen); margin-bottom: 5px; transition: 0.35s;
+        text-shadow: 0 0 var(--tardisBlue), -2px 0 0 var(--tardisBlue), 0 2px 0 var(--tardisBlue), 0 -2px 0 var(--tardisBlue), 1px 1px 0 var(--tardisBlue), -1px -1px 0 var(--tardisBlue), 1px -1px 0 var(--tardisBlue), -1px 1px 0 var(--tardisBlue), 1px 1px 5px var(--tardisBlue);    
+        &:hover {
+            letter-spacing: 3px;
+        }
     } 
+
     form {
         display: flex; justify-content: center;
         input {
-            width: 70%; border-color: #000;
-            font-size: 16px; text-align: center; font-family: 'Roboto', FontAwesome;
-            letter-spacing: 2px; text-transform: capitalize; 
+            width: 75%; border: 2px solid var(--callaGreen);
+            font-size: 16px; text-align: center; letter-spacing: 2px; text-transform: capitalize; 
             &::placeholder {
-                font-size: 14px; letter-spacing: 2px; 
-                text-transform: none; 
-                opacity: .7;
+                font-size: 13px; letter-spacing: 1px; 
+                text-transform: none; opacity: .7;
             }            
         }        
     }     

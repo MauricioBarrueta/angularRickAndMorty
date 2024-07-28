@@ -1,61 +1,66 @@
-.paginator, .characters-container, .character-info, .links {
+.paginator, .characters-container, .character-info, .character-location {
     display: flex; justify-content: space-between; align-items: center;
 }
 
-.alert-text {
-    position: absolute; top: 16.5%; width: 100%;
-    font-size: 10px; text-align: center; letter-spacing: 3px; color: red;     
+.alert-text {    
+    width: 100%; display: inline-block;
+    font-size: 20px; text-align: center; letter-spacing: 2px; 
+    color: var(--texas); margin: 10px 0 5px 0; 
 }
 
 .paginator {
     flex-wrap: wrap; 
     padding: 0.5rem 1em; margin-top: 5px;
-    font-size: 14px;
+    font-size: 16px;
+    border-bottom: 2px dashed var(--callaGreen);
     button {
-        font-family: 'Roboto', FontAwesome;
-    }
+        background-color: var(--endo); border-color: transparent; 
+        &:hover { background-color: var(--kiwiGreen); }
+    } 
+    span, .reset { color: var(--tardisBlue); }
     span {
-        letter-spacing: 5px; text-transform: uppercase;
+        letter-spacing: 5px; text-transform: uppercase; font-weight: bold;
+        user-select: none;
     }
     .reset {
-        width: 100%; display: inline-block; padding: 0;
-        font-size: 12px; letter-spacing: 2px;             
+        width: 100%; display: inline-block; 
+        padding: 5px; padding-top: 8px; margin: 5px 0;
+        background-color: transparent;
+        font-size: 14px; line-height: 1.75; letter-spacing: 2px; text-decoration: none;             
     }
 }
 
 .characters-container {
-    justify-content: center; flex-wrap: wrap; gap: 15px; padding: 5px 1em 1em 1em;
+    justify-content: center; flex-wrap: wrap; gap: 5px; padding: 5px 1em 1em 1em;
     .character-card {
-        width: 250px; height: 335px;
-        max-width: 250px; max-height: 335px;
+        width: 255px; height: 335px;        
         text-align: center;
-        border-radius: 10px; padding: 10px; border: 2px double; background-color: white;
+        border-radius: 10px; padding: 10px; border: 2px solid var(--callaGreen); 
+        background-color: white; 
         p { 
             margin: 0; cursor: help;
         }
         .character-name { cursor: default; }
         .img-container {
-            padding: 5px; border-bottom: 1px solid;
+            padding: 5px; 
             img {
                 width: 200px; height: 200px;
-                border-radius: 5px;
+                border-radius: 5px; border: 2px solid var(--callaGreen);
+                transition: .25s; cursor: pointer;
+                &:hover { scale: 1.05; }
             }
         }
         .character-info {  
-            padding: 5px 10px; 
-            border-bottom: 1px solid;    
-            p {
-                font-size: 12px; font-family: 'Roboto', FontAwesome;
-            }
+            padding: 5px; 
+            border-bottom: 2px dashed var(--callaGreen);    
+            p { font-size: 13px; }
         }
-        .links {   
-            flex-wrap: wrap; gap: 5px;
-            padding: 5px; justify-content: center;      
-            text-align: center; 
+        .character-location {   
+            flex-wrap: wrap; justify-content: center;  gap: 5px;
+            padding: 5px; text-align: center; 
             span {
                 width: 100%; cursor: help;
-                font-size: 12px; font-family: 'Roboto', FontAwesome;
-
+                font-size: 12px;
             }
         }
     }

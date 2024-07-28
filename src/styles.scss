@@ -1,10 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
 * {
-    margin: 0; padding: 0; box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    margin: 0; padding: 0; box-sizing: border-box;    
+    font-family: "Josefin Sans", sans-serif, FontAwesome;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
-body {
-    background-color: #d3dfe6;
+:root {
+    --kiwiGreen: #88e23b;
+    --texas:  #ebe480;
+    --tardisBlue:  #043c6e;
+    --endo:  #60a85f;
+    --mystery:  #a6cccc;
+    --callaGreen:  #6b7132;
+}
+
+body {    
+    min-height: 100vh;
+    background: var(--mystery);
+    background: linear-gradient(to bottom, var(--mystery) 0%, var(--tardisBlue) 100%);
 }

@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CharactersComponent } from './pages/characters/characters.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'characters', pathMatch: 'full' },
-  { path: 'characters', component: CharactersComponent },  
+  { path: '', redirectTo: 'characters-list', pathMatch: 'full' },
+  { path: 'characters-list', component: CharactersComponent },  
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

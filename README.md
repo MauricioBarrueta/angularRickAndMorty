@@ -1,6 +1,9 @@
-🇲🇽 Esta página web que consume la API de la serie 'Rick and Morty' permite consultar todos y cada uno de los personajes de la        serie, así como también, los datos correspondientes de cada uno de ellos.
+🇲🇽 Este sitio web permite consultar los datos de todos los personajes existentes de la serie Rick and Morty, así como los datos correspondientes de cada uno de ellos.
 
-🇺🇸 This website which consumes the API of the series 'Rick and Morty' allows you to consult each and every one of the characters of the series, as well as the corresponding data of each one of them.
+🇺🇸 This website allows you to consult the data of all the existing characters of the Rick and Morty series, as well as the corresponding data of each one of them.
+
+🔗 https://rickandmortydb-18e36.web.app/
+
 
 ![AngularRM](https://github.com/user-attachments/assets/de10a566-2647-498a-8ac3-244ba143f987)
 

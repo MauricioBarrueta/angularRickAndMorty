@@ -1,11 +1,12 @@
-🇲🇽 Este sitio web permite consultar los datos de todos los personajes existentes de la serie Rick and Morty, así como los datos correspondientes de cada uno de ellos.
+🇲🇽 Sitio web desarrollado con Angular y TypeScript, SCSS y Bootstrap, publicado con Firebase Hosting y conectado a la API de Rick and Morty (rickandmortyapi.com).
 
-🇺🇸 This website allows you to consult the data of all the existing characters of the Rick and Morty series, as well as the corresponding data of each one of them.
+
+🇺🇸 Website developed with Angular and TypeScript, SCSS and Bootstrap, published with Firebase Hosting and connected to Rick and Morty's API (rickandmortyapi.com).
 
 🔗 https://rickandmortydb-18e36.web.app/
 
 
-![AngularRM](https://github.com/user-attachments/assets/de10a566-2647-498a-8ac3-244ba143f987)
+![ricknmorty](https://github.com/user-attachments/assets/607bc519-16ee-4b79-9eb3-7bb807f5015a)
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
